@@ -9,6 +9,11 @@ import retrofit2.http.POST;
 
 public interface ApiService {
     @FormUrlEncoded
-    @POST("login/user")
-    Call<ModelLogin>login(@Field("email")String email,@Field("Password")String password);
+    @POST("user/login")
+    Call<ModelLogin>login(@Field("email")String email,@Field("password")String password);
+
+    @FormUrlEncoded
+    @POST("user/register")
+    Call<ModelLogin>register(@Field("name")String name,@Field("email")String email,@Field("password")String password,
+                             @Field("password_confirmation")String password_confirm);
 }
